@@ -7,6 +7,7 @@ function staticLoadPlaces() {
     return [
         {
             name: 'Foot Team 1',
+            color: 'white',
             location: {
                 lat: 51.226055,
                 lng: 0.89673259,
@@ -14,11 +15,20 @@ function staticLoadPlaces() {
         },
         {
             name: 'Foot Team 2',
+            color: 'blue',
             location: {
                 lat: 51.229913,
                 lng: 0.90344310,
             }
-        }
+        },
+        {
+            name: 'Dog Team 2',
+            color: 'purple',
+            location: {
+                lat: 51.230906,
+                lng: 0.89944254,
+            }
+        },
     ];
 }
 
@@ -29,11 +39,12 @@ function renderPlaces(places) {
 
         let latitude = place.location.lat;
         let longitude = place.location.lng;
+        let color = place.color;
         let name = place.name;
 
         let model = document.createElement('a-text');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-        model.setAttribute('color', 'red');
+        model.setAttribute('color', `${color}`);
         model.setAttribute('value', `${name}`);
         model.setAttribute('scale', '50 50 50');
 
