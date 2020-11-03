@@ -6,14 +6,15 @@
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-    <script>
-      window.onload = () => {navigator.geolocation.getCurrentPosition((position) => {
-        const distanceMsg = document.querySelector('[gps-entity-place]').getAttribute('distanceMsg');
-console.log(distanceMsg); 
-        // document.querySelector('a-text').setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`)
-      });
-     }
-    </script>
+    <script src="./script.js"></script>
+   
+<!-- //       window.onload = () => {navigator.geolocation.getCurrentPosition((position) => {
+//         const distanceMsg = document.querySelector('[gps-entity-place]').getAttribute('distanceMsg');
+// console.log(distanceMsg); 
+//         // document.querySelector('a-text').setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`)
+//       }); -->
+     <!-- } -->
+    <!-- </script> -->
   </head>
 
   <body style="margin: 0; overflow: hidden;">
@@ -22,10 +23,7 @@ console.log(distanceMsg);
       embedded
       arjs="sourceType: webcam; debugUIEnabled: true;"
     >
-      <!-- <a-text
-        value="No markers around"
-        look-at="[gps-camera]"
-        scale="5 5 5" -->
+     
       ></a-text>
        <a-text
         value="Misper."
@@ -36,16 +34,12 @@ console.log(distanceMsg);
       <a-box material="color: yellow"  scale="50 50 50" gps-entity-place="latitude: 51.226055; longitude: 0.89673259;"/>
 
       <a-text
-      value={distanceMsg}
+      value=distanceMsg
       look-at="[gps-camera]"
       scale="50 50 50"
       gps-entity-place="latitude: 51.226055; longitude: 0.89673259;"
     ></a-text>
-<!--       <a-entity  rotation="0 180 0" scale="0.15 0.15 0.15" gps-entity-place="longitude:  0.90107431; latitude: 51.228266;" animation-mixer/> -->
       <a-camera gps-camera rotation-reader  > </a-camera>
-<!--       <a-box gps-projected-entity-place='latitude: 51.2282; longitude: 0.99010' material='color: red' scale='10 10 10'></a-box> -->
-      
-      <!-- <a-box material="color: yellow" gps-entity-place="latitude: 51.2282; longitude: 0.99010"/> -->
-    </a-scene>
+   </a-scene>
   </body>
 </html>
