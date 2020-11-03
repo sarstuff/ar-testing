@@ -32,7 +32,7 @@ function renderPlaces(places) {
 
         let model = document.createElement('a-text');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-        model.setAttribute('material', 'color: yellow');
+        model.setAttribute('material', 'color: red');
         // model.setAttribute('rotation', '0 180 0');
         model.setAttribute('value', `${name}`);
         model.setAttribute('scale', '50 50 50');
