@@ -12,6 +12,13 @@ function staticLoadPlaces() {
                 lng: 0.89673259,
             }
         },
+        {
+            name: 'Foot Team 2',
+            location: {
+                lat: 51.229913,
+                lng: 0.90344310,
+            }
+        }
     ];
 }
 
@@ -23,7 +30,7 @@ function renderPlaces(places) {
         let longitude = place.location.lng;
         let name = place.name;
 
-        let model = document.createElement('a-box');
+        let model = document.createElement('a-text');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
         model.setAttribute('material', 'color: yellow');
         // model.setAttribute('rotation', '0 180 0');
