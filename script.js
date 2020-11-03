@@ -26,14 +26,14 @@ function renderPlaces(places) {
     let scene = document.querySelector('a-scene');
 
     places.forEach((place) => {
+
         let latitude = place.location.lat;
         let longitude = place.location.lng;
         let name = place.name;
 
         let model = document.createElement('a-text');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-        model.setAttribute('material', 'color: red');
-        // model.setAttribute('rotation', '0 180 0');
+        model.setAttribute('color', 'red');
         model.setAttribute('value', `${name}`);
         model.setAttribute('scale', '50 50 50');
 
@@ -43,4 +43,5 @@ function renderPlaces(places) {
 
         scene.appendChild(model);
     });
+
 }
