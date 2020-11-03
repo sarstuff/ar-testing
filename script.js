@@ -6,7 +6,7 @@ window.onload = () => {
 function staticLoadPlaces() {
     return [
         {
-            name: 'Magnemite',
+            name: 'Foot Team 1',
             location: {
                 lat: 51.226055,
                 lng: 0.89673259,
@@ -21,12 +21,13 @@ function renderPlaces(places) {
     places.forEach((place) => {
         let latitude = place.location.lat;
         let longitude = place.location.lng;
+        let name = place.name;
 
-        let model = document.createElement('a-box');
+        let model = document.createElement('a-text');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
         // model.setAttribute('gltf-model', './assets/magnemite/scene.gltf');
         model.setAttribute('rotation', '0 180 0');
-        model.setAttribute('animation-mixer', '');
+        model.setAttribute(`value', '${name}`);
         model.setAttribute('scale', '0.5 0.5 0.5');
 
         model.addEventListener('loaded', () => {
