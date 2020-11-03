@@ -23,12 +23,12 @@ function renderPlaces(places) {
         let longitude = place.location.lng;
         let name = place.name;
 
-        let model = document.createElement('a-text');
+        let model = document.createElement('a-box');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-        // model.setAttribute('gltf-model', './assets/magnemite/scene.gltf');
-        model.setAttribute('rotation', '0 180 0');
+        model.setAttribute('material', 'color: yellow');
+        // model.setAttribute('rotation', '0 180 0');
         model.setAttribute('value', `${name}`);
-        model.setAttribute('scale', '0.5 0.5 0.5');
+        model.setAttribute('scale', '50 50 50');
 
         model.addEventListener('loaded', () => {
             window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
