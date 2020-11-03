@@ -46,14 +46,15 @@ function renderPlaces(places) {
         let model = document.createElement('a-text');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
 
-        let distanceMsg = model.getAttribute('distanceMsg');
-        console.log(distanceMsg);
+        // let distanceMsg = model.getAttribute('distanceMsg');
+        // console.log(distanceMsg);
 
 
 
 
         model.setAttribute('color', `${color}`);
-        model.setAttribute('value', `${name} ${distanceMsg}`);
+        model.setAttribute('font', `roboto`);
+        model.setAttribute('value', `${name} `);
         model.setAttribute('scale', '50 50 50');
 
         model.addEventListener('loaded', () => {
